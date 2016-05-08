@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<f:facet name="first">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</f:facet>
+
+	<title>Controla Celulas</title>
+	<h:outputStylesheet library="celulas" name="styles/custom.css" />
+	<h:outputStylesheet library="celulas" name="styles/layout.css" />
+	<h:outputStylesheet library="celulas" name="styles/components.css" />
+	
+	<h:outputScript target="body" library="primefaces" name="jquery/jquery.js" />
+	<h:outputScript target="body" library="celulas" name="javascripts/app.js" />
+</h:head>
+
+<p:growl id="mensagem"/>
+<h:body>
+	
+	<header class="ce-topbar">
+		<h:graphicImage library="celulas" name="images/logo.png" />
+		
+		<a href="#" class="ce-toggle  js-toggle"><i class="fa  fa-bars"></i></a>
+	</header>
+	
+	<aside class="ce-sidebar  js-sidebar">
+	
+	<nav class="ce-menu">
+		<h:form id="formMenu">
+			<p:growl autoUpdate="true"/>
+			<p:panelMenu>
+				<p:submenu label="Dashboard"/>	
+        		
+				<p:submenu label="Cadastros">
+					<p:menuitem value="Estado" url="/pages/estados.xhtml"/>
+            		<p:menuitem value="Cidade" url="/pages/cidades.xhtml"/>
+            		<p:menuitem value="Tipos" url="/pages/tipos.xhtml"/>
+            		<p:menuitem value="Celulas" url="/pages/celulas.xhtml"/>
+            		<p:menuitem value="Pessoas" url="/pages/pessoas.xhtml"/>
+        		</p:submenu>
+        		
+        		<p:submenu label="Movimentações">
+					<p:menuitem value="Lançamentos" url="#"/>            		
+        		</p:submenu>
+        		
+        		<p:submenu label="Relatorios">
+					<p:menuitem value="Relação de Celulas" url="#"/>					
+					<p:menuitem value="Relação de Frequencia" url="#"/>            		
+        		</p:submenu>
+        		
+        		<p:submenu label="Usuarios">
+					<p:menuitem value="Controle" url="#"/>            		
+        		</p:submenu>
+       		</p:panelMenu>
+       	</h:form>
+	</nav>
+	</aside>	
+	<section class="ce-content  js-content">
+		<ui:insert name="content" />
+	</section>
+	
+</h:body>
+
+</html>
